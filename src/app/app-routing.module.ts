@@ -11,9 +11,17 @@ const routes: Routes = [
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
   },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
+  { 
+    path: 'Timetable', 
+    loadChildren: './timetable/timetable.module#TimetablePageModule' 
+  },
+  { 
+    path: 'Sports', 
+    loadChildren: './sports/sports.module#SportsPageModule' 
+  },
+  { 
+    path: 'Map', 
+    loadChildren: './map/map.module#MapPageModule' 
   }
 ];
 
