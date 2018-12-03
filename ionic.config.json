@@ -1,6 +1,8 @@
 {
   "name": "sellapp",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular",
   "id": "efb26331"
 }

@@ -12,15 +12,15 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule'
   },
   { 
-    path: 'Timetable', 
+    path: 'timetable', 
     loadChildren: './timetable/timetable.module#TimetablePageModule' 
   },
   { 
-    path: 'Sports', 
+    path: 'sports', 
     loadChildren: './sports/sports.module#SportsPageModule' 
   },
   { 
-    path: 'Map', 
+    path: 'map', 
     loadChildren: './map/map.module#MapPageModule' 
   }
 ];
