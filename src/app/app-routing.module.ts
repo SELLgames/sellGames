@@ -22,6 +22,10 @@ const routes: Routes = [
   { 
     path: 'map', 
     loadChildren: './map/map.module#MapPageModule' 
+  },
+  { 
+    path: 'settings', 
+    loadChildren: './settings/settings.module#SettingsPageModule' 
   }
 ];
 

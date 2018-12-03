@@ -1,11 +1,16 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header no-border>
+  <ion-toolbar color="dark">
       <ion-buttons slot="start">
-          <ion-back-button defaultHref="home" icon="arrow-back" text=""></ion-back-button>
+          <ion-back-button navPush defaultHref="home" icon="arrow-back" text=""></ion-back-button>
       </ion-buttons>
     <ion-title>
         Timetable
     </ion-title>
+    <ion-buttons slot="end">
+            <ion-button href="/settings">
+                <ion-icon slot="icon-only" name="settings"></ion-icon>
+              </ion-button>
+        </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
