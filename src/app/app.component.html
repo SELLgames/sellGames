@@ -1,6 +1,6 @@
 <ion-app>
   <ion-split-pane>
-    <ion-menu>
+    <ion-menu color="main">
       <ion-content>
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
@@ -13,6 +13,11 @@
           </ion-menu-toggle>
         </ion-list>
       </ion-content>
+      <ion-footer>
+          <ion-toolbar color="highlight">
+            <ion-title>Login</ion-title>
+          </ion-toolbar>
+        </ion-footer>
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>
   </ion-split-pane>
