@@ -34,6 +34,11 @@
   --ion-color-shade: #633ce0;
   --ion-color-tint: #7e57ff;
 }
+ion-menu {
+  --background:  #bca5c1;
+  --width: 100px;
+  --width-small: 100px;
+}
 
 /** color($colors, primary, base); **/
 $colors: (
