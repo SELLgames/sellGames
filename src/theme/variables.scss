@@ -34,10 +34,55 @@
   --ion-color-shade: #633ce0;
   --ion-color-tint: #7e57ff;
 }
+/** Side menu **/
+
 ion-menu {
-  --background:  #bca5c1;
   --width: 100px;
   --width-small: 100px;
+}
+ion-button {
+  background-color: transparent;
+}
+
+ion-item {
+  --min-height: 100px;
+  --padding-top: 0;
+  display: block;
+  position: relative;
+  height: 100px;
+  width: 100px;
+}
+ion-list {
+  display: block;
+  padding: 0;
+}
+.list-md {
+  padding: 0;
+}
+ion-label {
+  text-align: center;
+  color: #f4efee;
+  margin: 0;
+}
+ion-label > .item, .sc-ion-label-md-h, .item .sc-ion-label-md-h {
+  margin: 0;
+}
+ion-avatar {
+  margin-left: 12px;
+}
+#login-button {
+  font-size: 30px;
+}
+#login-label {
+  font-size: 12px
+}
+#login-item {
+  --min-height: 50px;
+  height: 50px;
+}
+#close-icon {
+  font-size: 40px;
+  margin-left: 13px;
 }
 
 /** color($colors, primary, base); **/

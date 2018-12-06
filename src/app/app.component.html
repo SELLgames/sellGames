@@ -1,43 +1,48 @@
 <ion-app>
   <ion-menu type="overlay">
-      <ion-header>
-          <ion-toolbar color="main">
+      <ion-header no-border>
+          <ion-toolbar color="main" no-border-bottom>
               <ion-menu-toggle auto-hide="false">
                 <ion-buttons>
                   <ion-button>
-                      <ion-icon slot="icon-only" name="close"></ion-icon>
+                      <ion-icon id="close-icon" slot="icon-only" name="close"></ion-icon>
                   </ion-button>
                 </ion-buttons>
               </ion-menu-toggle>
           </ion-toolbar>
       </ion-header>
-    <ion-content>
+    <ion-content color="main">
       <ion-list lines="none">
-          <ion-list-header>
-              <ion-item>
-                  <ion-avatar>
-                    <img [src]="user.img">
-                  </ion-avatar>
-              </ion-item>
-          </ion-list-header>
+        <ion-menu-toggle auto-hide="false">
+            <ion-item color="main" detail="false" href="/profile">
+              <ion-avatar>
+                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+              </ion-avatar>
+          </ion-item>
+        </ion-menu-toggle>
         <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-          <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-            <ion-icon slot="start" [name]="p.icon"></ion-icon>
-            <ion-label>
+          <ion-item color="main" detail="false" [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-thumbnail>
+                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+              </ion-thumbnail>
+            <ion-label text-wrap position="stacked">
               {{p.title}}
             </ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
     </ion-content>
-    <ion-footer>
-        <ion-toolbar color="highlight">
-          <ion-buttons slot="start">
-            <ion-button href="/home">
-              <ion-icon name="log-in"></ion-icon>
-            </ion-button>
-          </ion-buttons>
-          <ion-label>Login</ion-label>
+    <ion-footer no-border>
+        <ion-toolbar color="highlight" no-border-top>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item id="login-item" color="highlight" detail="false" href="/home">
+                <ion-buttons slot="start">
+                    <ion-button>
+                      <ion-icon id="login-button" name="log-in"></ion-icon>
+                    </ion-button>
+                  </ion-buttons>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-toolbar>
     </ion-footer>
     </ion-menu>
