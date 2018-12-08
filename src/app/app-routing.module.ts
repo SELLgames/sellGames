@@ -30,6 +30,10 @@ const routes: Routes = [
   { 
     path: 'profile', 
     loadChildren: './profile/profile.module#ProfilePageModule' 
+  },
+  { 
+    path: 'sport', 
+    loadChildren: './sport/sport.module#SportPageModule' 
   }
 ];
 

@@ -1,7 +1,7 @@
 <ion-app>
   <ion-menu type="overlay">
       <ion-header no-border>
-          <ion-toolbar color="main" no-border-bottom>
+          <ion-toolbar mode="md" color="main" no-border-bottom>
               <ion-menu-toggle auto-hide="false">
                 <ion-buttons>
                   <ion-button>
@@ -21,7 +21,7 @@
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-          <ion-item color="main" detail="false" [routerDirection]="'root'" [routerLink]="[p.url]">
+          <ion-item mode="md" color="main" detail="false" [routerDirection]="'root'" [routerLink]="[p.url]">
               <ion-thumbnail>
                 <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
               </ion-thumbnail>

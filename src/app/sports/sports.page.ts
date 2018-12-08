@@ -6,31 +6,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sports.page.scss'],
 })
 export class SportsPage implements OnInit {
-
+  
   private selectedItem: any;
   private icons = [
-    'flask',
-    'wifi',
-    'beer',
     'football',
     'basketball',
-    'paper-plane',
     'american-football',
-    'boat',
-    'bluetooth',
-    'build'
+    'baseball',
+    'medal',
+    'podium',
   ];
-  public items: Array<{ title: string; note: string; icon: string }> = [];
+  private sports = [
+    'Football',
+    'Basketball',
+    'Orienteering',
+    'Weightlifting',
+    'Judo',
+    'Ski jumping',
+  ];
+
+  public sportList: Array<{ sport: string; icon: string; url: string }> = [];
   constructor() {
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
+    for (let i = 0; i < this.sports.length; i++) {
+      this.sportList.push({
+        sport: this.sports[i],
+        icon: this.icons[i],
+        url: '/sport'
       });
     }
   }
   ngOnInit() {
   }
-
+  // add back when alpha.4 is out
+  // navigate(item) {
+  //   this.router.navigate(['/list', JSON.stringify(item)]);
+  // }
 }

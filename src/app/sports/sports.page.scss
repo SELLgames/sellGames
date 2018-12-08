@@ -1,0 +1,28 @@
+ion-item {
+    --min-height: 50px;
+    height: 50px;
+    width: 100%;
+}
+ion-segment {
+    padding: 0;
+    margin: 0;
+}
+ion-segment-button {
+    height: 45px;
+    text-transform: none;
+    font-weight: normal;
+    font-size: 12px;
+    border-style: solid;
+    border-color:#f4efee;
+    --background-activated: #f4efee;
+    --background-checked: #f4efee;
+    --background-hover: #f4efee;
+    --border-color: #f4efee;
+    --border-radius: 5px;
+    --border-width: 1px;
+    --indicator-color: #f4efee;
+    --indicator-color-checked: #bca5c1; 
+}
+ion-content {
+    --padding-top: 0;
+}

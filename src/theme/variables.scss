@@ -43,7 +43,6 @@ ion-menu {
 ion-button {
   background-color: transparent;
 }
-
 ion-item {
   --min-height: 100px;
   --padding-top: 0;
@@ -52,10 +51,11 @@ ion-item {
   height: 100px;
   width: 100px;
 }
+
 ion-list {
-  display: block;
   padding: 0;
 }
+
 .list-md {
   padding: 0;
 }

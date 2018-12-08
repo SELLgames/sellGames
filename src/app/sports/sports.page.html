@@ -15,5 +15,21 @@
 </ion-header>
 
 <ion-content padding>
-    <h3>Sports</h3>
+    <ion-segment color="main" (ionChange)="segmentChanged($event)">
+        <ion-segment-button mode="md" value="alphabetical">
+            Alphabetical
+        </ion-segment-button>
+        <ion-segment-button mode="md" value="category">
+            Category
+        </ion-segment-button>
+        <ion-segment-button mode="md" value="favorites">
+            Favorites
+        </ion-segment-button>
+    </ion-segment>
+    <ion-list detail="false" lines="none">
+        <ion-item *ngFor="let sports of sportList" [href]="sports.url">
+            <ion-icon [name]="sports.icon" slot="start" ></ion-icon>
+            {{sports.sport}}
+        </ion-item>
+    </ion-list>
 </ion-content>
