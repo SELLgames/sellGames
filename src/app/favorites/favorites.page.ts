@@ -1,18 +1,22 @@
-import { Component, OnInit, ViewChildren, ViewChild, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { Slides, Content } from '@ionic/angular';
 
 @Component({
-  selector: 'app-timetable',
-  templateUrl: './timetable.page.html',
-  styleUrls: ['./timetable.page.scss'],
+  selector: 'app-favorites',
+  templateUrl: './favorites.page.html',
+  styleUrls: ['./favorites.page.scss'],
 })
-export class TimetablePage implements OnInit {
+export class FavoritesPage implements OnInit {
 
-  @ViewChild('slides') sliders: Slides;
+  @ViewChildren(Slides) slides: QueryList<Slides>;
 
   public venueList: Array<{ name: string; content: string; }> = [];
   public dayList: Array<{ date: string }> = [];
   private selectedItem: any;
+
+  public move(index: number): void {
+    this.slides.toArray()[index].slideNext(500);
+  } 
 
   private days = [
     'Friday 15th',
@@ -33,11 +37,7 @@ export class TimetablePage implements OnInit {
   ];
 
   slideOpts = {
-    effect: 'flip',
-    initialSlide: 3,
-    slidesPerView: 1,
-    loop: true,
-    control: this.sliders
+    effect: 'flip'
   };
 
   constructor() {
@@ -53,13 +53,8 @@ export class TimetablePage implements OnInit {
       });
     }
   }
-  public move(): void {
-    //this.slideTitle.slideNext();
-    //this.slideContent.slideNext();
-  } 
 
   ngOnInit() {
-
   }
 
 }

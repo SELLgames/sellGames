@@ -1,0 +1,31 @@
+<ion-header no-border>
+    <ion-toolbar color="main">
+        <ion-buttons slot="start">
+            <ion-back-button navPush defaultHref="home" icon="arrow-back" text=""></ion-back-button>
+        </ion-buttons>
+      <ion-title>
+          Favorites
+      </ion-title>
+      <ion-buttons slot="end">
+          <ion-button href="/sports">
+              <ion-icon slot="icon-only" name="ios-star"></ion-icon>
+          </ion-button>
+          <ion-button href="/settings">
+              <ion-icon slot="icon-only" name="settings"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <ion-slides pager="true" [options]="slideOpts">
+          <ion-slide id="slide-title" *ngFor="let venue of venueList">
+              <h2>{{venue.name}}</h2>
+          </ion-slide>
+      </ion-slides>
+      <ion-segment color="main" (ionChange)="segmentChanged($event)">
+          <ion-segment-button mode="md" *ngFor="let day of dayList">
+              {{day.date}}
+          </ion-segment-button>
+      </ion-segment>
+  </ion-content>

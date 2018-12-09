@@ -37,9 +37,7 @@ h2 {
     font-size: 20px;
 }
 #slide-content {
-    height: 100vh;
-    flex-direction: column;
+    height: inherit;
     background-color: white;
     color: #929292;
-    margin-top: 20px;
 }

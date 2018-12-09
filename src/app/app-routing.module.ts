@@ -34,6 +34,10 @@ const routes: Routes = [
   { 
     path: 'sport', 
     loadChildren: './sport/sport.module#SportPageModule' 
+  },
+  { 
+    path: 'favorites', 
+    loadChildren: './favorites/favorites.module#FavoritesPageModule' 
   }
 ];
 

@@ -14,7 +14,7 @@ export class SportsPage implements OnInit {
     'american-football',
     'baseball',
     'medal',
-    'podium',
+    'podium'
   ];
   private sports = [
     'Football',
@@ -22,7 +22,7 @@ export class SportsPage implements OnInit {
     'Orienteering',
     'Weightlifting',
     'Judo',
-    'Ski jumping',
+    'Ski jumping'
   ];
 
   public sportList: Array<{ sport: string; icon: string; url: string }> = [];
