@@ -8,8 +8,24 @@ import { Slides, Content } from '@ionic/angular';
 })
 export class TimetablePage implements OnInit {
 
-  @ViewChild('slides') sliders: Slides;
-
+  @ViewChild('slideTitle', { 
+    read: Slides 
+  }) slideTitle: Slides;
+  @ViewChild('slideContent', { 
+    read: Slides 
+  }) slideContent: Slides;
+  
+  move(movedSlide: Slides) {
+      if (movedSlide == this.slideTitle) {
+        //let index = movedSlide.getActiveIndex();
+        //console.log(index);
+        this.slideContent.slideNext();
+      } else {
+        this.slideTitle.slideNext();
+        //let index = movedSlide.getActiveIndex();
+        //console.log(index);
+    }
+  }
   public venueList: Array<{ name: string; content: string; }> = [];
   public dayList: Array<{ date: string }> = [];
   private selectedItem: any;
@@ -34,10 +50,9 @@ export class TimetablePage implements OnInit {
 
   slideOpts = {
     effect: 'flip',
-    initialSlide: 3,
+    initialSlide: 0,
     slidesPerView: 1,
-    loop: true,
-    control: this.sliders
+    loop: true
   };
 
   constructor() {
@@ -53,13 +68,9 @@ export class TimetablePage implements OnInit {
       });
     }
   }
-  public move(): void {
-    //this.slideTitle.slideNext();
-    //this.slideContent.slideNext();
-  } 
-
   ngOnInit() {
 
   }
 
 }
+
