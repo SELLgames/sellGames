@@ -2,9 +2,6 @@ ion-title {
     font-size: 18px;
     text-align: center;
 }
-#carousel{
-    height: 50px;
-}
 ion-segment {
     padding: 0;
     margin: 0;
@@ -25,11 +22,28 @@ ion-segment-button {
     --indicator-color: #f4efee;
     --indicator-color-checked: #bca5c1; 
 }
-
 ion-content {
     --padding-top: 0;
 }
 .segment{
     width: 100%;
+}
+ion-slides { 
+    height: initial;
+    --bullet-background: #f4efee;
+    --bullet-background-active: #f4efee;
+}
+ion-slide {
+    height: 200px;
+    background-color: #7044ff;
+    color: #f4efee;
+    border: none;
+}
+h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+p {
+    padding-left:20px;
 }
 

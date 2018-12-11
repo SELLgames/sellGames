@@ -26,3 +26,20 @@ ion-segment-button {
 ion-content {
     --padding-top: 0;
 }
+#favoriteSport {
+    display: block;
+    float: right;
+}
+#setting-button {
+    color: #f4efee;
+}
+ion-button {
+    color: #929292;
+    font-size: 15px;
+    text-align: left;
+    text-transform: none;
+    font-weight: normal;
+}
+ion-text {
+    width: 100%;
+}

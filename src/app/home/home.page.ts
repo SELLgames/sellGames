@@ -8,13 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomePage{ 
  
   tabs: Array<{key:string, content:any}>=[
-    {key:'News', content: "asdasdasdasdvdghhgfdssd"},
-    {key:'Feed', content:"sagsdghhkjhgfdsadfghjkhgfdsghjgf"}
+    {key:'News', content: "News"},
+    {key:'Feed', content: "Social Media feed"}
   ];
+
   activeTab:string="News";
   switchTab(index:number){
     this.activeTab=this.tabs[index].key;
   }
-
-  
 }

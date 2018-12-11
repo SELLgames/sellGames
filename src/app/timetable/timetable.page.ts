@@ -47,7 +47,10 @@ export class TimetablePage implements OnInit {
     'Timetable 3',
     'Timetable 4',
   ];
-
+  dayChanged() {
+    console.log("Day changed");
+  }
+  
   slideOpts = {
     effect: 'flip',
     initialSlide: 0,

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChildren, ViewChild, QueryList } from '@angular/core';
 import { Slides, Content } from '@ionic/angular';
 
 @Component({
@@ -9,14 +9,27 @@ import { Slides, Content } from '@ionic/angular';
 export class FavoritesPage implements OnInit {
 
   @ViewChildren(Slides) slides: QueryList<Slides>;
-
+  @ViewChild('slideTitle', { 
+    read: Slides 
+  }) slideTitle: Slides;
+  @ViewChild('slideContent', { 
+    read: Slides 
+  }) slideContent: Slides;
+  
+  move(movedSlide: Slides) {
+      if (movedSlide == this.slideTitle) {
+        //let index = movedSlide.getActiveIndex();
+        //console.log(index);
+        this.slideContent.slideNext();
+      } else {
+        this.slideTitle.slideNext();
+        //let index = movedSlide.getActiveIndex();
+        //console.log(index);
+    }
+  }
   public venueList: Array<{ name: string; content: string; }> = [];
   public dayList: Array<{ date: string }> = [];
   private selectedItem: any;
-
-  public move(index: number): void {
-    this.slides.toArray()[index].slideNext(500);
-  } 
 
   private days = [
     'Friday 15th',
@@ -35,9 +48,15 @@ export class FavoritesPage implements OnInit {
     'Timetable 3',
     'Timetable 4',
   ];
-
+  dayChanged() {
+    console.log("Day changed");
+  }
+  
   slideOpts = {
-    effect: 'flip'
+    effect: 'flip',
+    initialSlide: 0,
+    slidesPerView: 1,
+    loop: true
   };
 
   constructor() {
@@ -53,7 +72,6 @@ export class FavoritesPage implements OnInit {
       });
     }
   }
-
   ngOnInit() {
   }
 

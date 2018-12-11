@@ -23,7 +23,7 @@
             <h2>{{venue.name}}</h2>
         </ion-slide>
     </ion-slides>
-    <ion-segment color="main" (ionChange)="segmentChanged($event)">
+    <ion-segment color="main" (ionChange)="dayChanged()">
         <ion-segment-button mode="md" *ngFor="let day of dayList">
             {{day.date}}
         </ion-segment-button>

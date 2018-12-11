@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-sports',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sports.page.scss'],
 })
 export class SportsPage implements OnInit {
-  
+  //@ViewChild('mylbl') ;
+
+  favorited: boolean = true;
   private selectedItem: any;
   private icons = [
     'football',
@@ -24,6 +26,15 @@ export class SportsPage implements OnInit {
     'Judo',
     'Ski jumping'
   ];
+
+  sortChanged(): void {
+    console.log("Sort changed");
+  }
+
+  toggleFavorite(index:number): void {
+    this.favorited = !this.favorited;
+    console.log("Favorited a sport " + index);
+  }
 
   public sportList: Array<{ sport: string; icon: string; url: string }> = [];
   constructor() {
