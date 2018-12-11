@@ -1,20 +1,54 @@
-<ion-header no-border>
-  <ion-toolbar color="main">
-      <ion-buttons slot="start">
-          <ion-menu-button>
-          </ion-menu-button>
-      </ion-buttons>
-    <ion-title>
-      SELL Games Lahti 2020
-    </ion-title>
-    <ion-buttons slot="end">
-        <ion-button href="/settings">
-            <ion-icon slot="icon-only" name="settings"></ion-icon>
-          </ion-button>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-    <h3>News Feed & Social</h3>
+  <div id="carousel">
+    Kuvakaruselli
+  </div>
+  
+    <ion-segment color="main">
+      <ion-segment-button *ngFor="let tab of tabs; let i = index" (click)="switchTab(i)">
+        {{tab.key}}
+      </ion-segment-button>
+    </ion-segment>
+    <div *ngFor="let tab of tabs">
+      <div *ngIf="tab.key === activeTab">
+        <p>{{tab.content}}</p>
+      </div>
+    </div>
+
+
+
+<!--
+   <div>
+    <ion-segment ng-model = "new">
+      <ion-segment-button value="news">
+        News
+      </ion-segment-button>
+      <ion-segment-button value="feed">
+        Feed
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+<div ng-switch="new">
+
+    <div  ng-switch-when="news">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At ad dolorem quia vero, iste dolorum quidem praesentium nemo! Quod, nisi ratione culpa temporibus voluptatum placeat eos explicabo quidem assumenda magni!
+    </div>
+    
+    <div ng-switch-when="feed">
+      sadfasdfasdf
+    </div>
+   -->       
+
+
 </ion-content>
