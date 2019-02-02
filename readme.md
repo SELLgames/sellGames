@@ -25,7 +25,7 @@ Atte Heinonen\
 Julia Kuisma\
 Petri Kupias\
 Tomi Laurikainen\
-Aki Virtanen\
+Aki Virtanen
 
 
 
