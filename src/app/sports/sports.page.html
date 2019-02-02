@@ -7,7 +7,7 @@
         Sports
     </ion-title>
     <ion-buttons slot="end">
-            <ion-button href="/settings">
+            <ion-button id="setting-button" href="/settings">
                 <ion-icon slot="icon-only" name="settings"></ion-icon>
               </ion-button>
         </ion-buttons>
@@ -15,7 +15,7 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-segment color="main" (ionChange)="segmentChanged($event)">
+    <ion-segment color="main" (ionChange)="sortChanged()">
         <ion-segment-button mode="md" value="alphabetical">
             Alphabetical
         </ion-segment-button>
@@ -26,10 +26,13 @@
             Favorites
         </ion-segment-button>
     </ion-segment>
-    <ion-list detail="false" lines="none">
-        <ion-item *ngFor="let sports of sportList" [href]="sports.url">
-            <ion-icon [name]="sports.icon" slot="start" ></ion-icon>
-            {{sports.sport}}
+    <ion-list mode="md" detail="false" lines="none">
+        <ion-item *ngFor="let sports of sportList; let i = index">
+            <ion-button [href]="sports.url" fill="clear">
+                <ion-icon slot="start" size="large" [name]="sports.icon" slot="start" ></ion-icon>
+                    <ion-text>{{sports.sport}}</ion-text>
+            </ion-button>
+            <ion-icon #favoriteSport(i) slot="end" [name]="favorited ? 'star-outline' : 'star'" (click)="toggleFavorite(i)"></ion-icon>
         </ion-item>
     </ion-list>
 </ion-content>

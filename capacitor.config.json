@@ -1,0 +1,6 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "sellapp",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

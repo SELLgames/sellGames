@@ -18,17 +18,17 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-slides #slides pager="true" [options]="slideOpts" (ionSlideDidChange)="move()">
+    <ion-slides #slideTitle pager="true" [options]="slideOpts" (ionSlideDrag)="move(slideTitle)">
         <ion-slide id="slide-title" *ngFor="let venue of venueList">
             <h2>{{venue.name}}</h2>
         </ion-slide>
     </ion-slides>
-    <ion-segment color="main" (ionChange)="segmentChanged($event)">
+    <ion-segment color="main" (ionChange)="dayChanged()">
         <ion-segment-button mode="md" *ngFor="let day of dayList">
             {{day.date}}
         </ion-segment-button>
     </ion-segment>
-    <ion-slides #slides pager="false" [options]="slideOpts" (ionSlideDidChange)="move()">
+    <ion-slides #slideContent pager="false" [options]="slideOpts" (ionSlideDrag)="move(slideContent)">
         <ion-slide id="slide-content" *ngFor="let venue of venueList">
             <h2>{{venue.content}}</h2>
         </ion-slide>
